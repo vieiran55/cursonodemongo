@@ -14,7 +14,7 @@ db.once("open", () => {
 const app = express();
 //acrescentar cors
 app.use(cors())
-app.use(express.static("public"));
+
 app.use(express.json());
 routes(app);
 
