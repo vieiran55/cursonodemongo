@@ -3,6 +3,8 @@ import camisas from "./dados/camisas.js"
 import db from "./config/dbConnect.js"
 // import livros from "./models/Livro.js";
 import routes from "./routes/index.js";
+// instalar pelo npm
+import cors from "cors";
 
 db.on("error", console.log.bind(console, "Erro de conexão"))
 db.once("open", () => {
@@ -10,6 +12,8 @@ db.once("open", () => {
 });
 
 const app = express();
+//acrescentar cors
+app.use(cors())
 app.use(express.json());
 routes(app);
 

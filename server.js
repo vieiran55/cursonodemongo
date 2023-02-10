@@ -3,7 +3,10 @@ import app from "./src/app.js";
 // carrega o modulo http
 // const http = require("http");
 // seta a porta
-const port = process.env.PORT || 3000;
+
+
+
+const port = process.env.PORT || 5000;
 
 // const rotas = {
 //   "/": "Curso de Node",
