@@ -4,9 +4,8 @@ import autores from "./autoresRoutes.js";
 
 const routes = (app) => {
   app.route("/").get((req, res) => {
-    res.status(200).sendFile('index.html', {root: path.join(__dirname, 'public')});
-    res.sendFile('index.html', {root: path.join(__dirname, 'public')});
-    res.sendFile('index.html', {root: path.join(__dirname, 'public')});
+    res.status(200).send({ titulo: "Curso de Node" });
+    // res.sendFile('index.html', {root: path.join(__dirname, 'public')});
     //incluir headers
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Credentials", "true");
@@ -21,7 +20,6 @@ const routes = (app) => {
 
   app.use(express.json(), livros, autores);
   app.use(express.static("public"));
-
 };
 
 export default routes;
